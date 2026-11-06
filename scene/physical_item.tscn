@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ce1x4f2m8akuc"]
+
+[ext_resource type="Script" uid="uid://c07gjmj0eipk7" path="res://script/physical_item.gd" id="1_or8dh"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_uvn4d"]
+[ext_resource type="PackedScene" uid="uid://f6grr6f1fpoe" path="res://scene/interactable_area.tscn" id="2_or8dh"]
+
+[node name="PhysicalItem" type="Node2D" unique_id=887918481]
+script = ExtResource("1_or8dh")
+
+[node name="ItemSprite" type="TextureRect" parent="." unique_id=729875381]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_uvn4d")
+
+[node name="InteractableArea" parent="." unique_id=6959967 instance=ExtResource("2_or8dh")]
+
+[connection signal="interacted" from="InteractableArea" to="." method="_on_interacted"]

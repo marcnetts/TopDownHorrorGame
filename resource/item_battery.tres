@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cebnp0oiidpl4"]
+
+[ext_resource type="Script" uid="uid://coki1ga7xabsy" path="res://script/item.gd" id="1_sgnmh"]
+[ext_resource type="Texture2D" uid="uid://uhociv5lqros" path="res://asset/LANTERNINHA.png" id="2_jdats"]
+
+[resource]
+script = ExtResource("1_sgnmh")
+name = &"battery"
+description = "  Reabastece a energia da laterna"
+sprite = ExtResource("2_jdats")
+metadata/_custom_type_script = "uid://coki1ga7xabsy"

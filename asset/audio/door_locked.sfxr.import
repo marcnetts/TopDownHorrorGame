@@ -1,0 +1,17 @@
+[remap]
+
+importer="com.timothyqiu.gdfxr.importer"
+type="AudioStreamWAV"
+uid="uid://57e8lu4gkonu"
+path="res://.godot/imported/door_locked.sfxr-3409e71b5009699f558e9322e2d0ce49.sample"
+
+[deps]
+
+source_file="res://asset/audio/door_locked.sfxr"
+dest_files=["res://.godot/imported/door_locked.sfxr-3409e71b5009699f558e9322e2d0ce49.sample"]
+
+[params]
+
+loop=false
+bit_depth=0
+sample_rate=0

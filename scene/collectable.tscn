@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://vg712wa7deka"]
+
+[ext_resource type="Script" uid="uid://nnp13jjginuy" path="res://script/collectable.gd" id="1_28dhl"]
+[ext_resource type="PackedScene" uid="uid://f6grr6f1fpoe" path="res://Scene/interactable_area.tscn" id="2_jqe0m"]
+
+[node name="Collectable" type="Node2D" unique_id=1711840330]
+script = ExtResource("1_28dhl")
+
+[node name="TMPLabel" type="Label" parent="." unique_id=2133107593]
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 38.0
+offset_bottom = 21.0
+text = "Item"
+
+[node name="InteractableArea" parent="." unique_id=1044666560 instance=ExtResource("2_jqe0m")]
+position = Vector2(-1, 0)
+
+[connection signal="interacted" from="InteractableArea" to="." method="_on_interactable_area_interacted"]

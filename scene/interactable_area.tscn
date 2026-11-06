@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://f6grr6f1fpoe"]
+
+[ext_resource type="Script" uid="uid://drw8j7mled8g" path="res://script/interactable_area.gd" id="1_q3fsk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yc80"]
+
+[node name="InteractableArea" type="Area2D" unique_id=6959967]
+script = ExtResource("1_q3fsk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1119151456]
+shape = SubResource("RectangleShape2D_0yc80")
+
+[node name="DebugLabel" type="Label" parent="." unique_id=2133107593]
+offset_left = 2.0
+offset_top = -2.0
+offset_right = 38.0
+offset_bottom = 21.0
+text = "BUG"

@@ -1,0 +1,228 @@
+[gd_scene format=3 uid="uid://coie7d6ac2cfs"]
+
+[ext_resource type="Script" uid="uid://bxfdystlkfp74" path="res://script/door.gd" id="1_i7qj5"]
+[ext_resource type="PackedScene" uid="uid://f6grr6f1fpoe" path="res://scene/interactable_area.tscn" id="1_y5pye"]
+[ext_resource type="AudioStream" uid="uid://dvq020bgkvn1d" path="res://asset/audio/door_opened_2.sfxr" id="3_2tyue"]
+[ext_resource type="AudioStream" uid="uid://57e8lu4gkonu" path="res://asset/audio/door_locked.sfxr" id="4_xt1h0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkpy8"]
+size = Vector2(150, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yc80"]
+size = Vector2(146, 20)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_wkpy8"]
+size = Vector2(8, 16)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_0yc80"]
+streams_count = 1
+stream_0/stream = ExtResource("3_2tyue")
+
+[sub_resource type="Animation" id="Animation_i7qj5"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OpenSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LockSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StaticBody2D/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("DoorPivot/DoorSprite:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("InteractableArea:active")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_psa10"]
+resource_name = "locked"
+length = 0.6333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorPivot/DoorSprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.46666667, 0.56666666, 0.6333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.034906585, -0.034906585, 0.034906585, -0.034906585, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LockSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_2tyue"]
+resource_name = "open"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DoorPivot:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.06666667, 0.77292836, -1.5707964, -0.03333336, -0.44880235, 0, 0),
+"times": PackedFloat32Array(0, 0.8)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OpenSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.176),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LockSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8398004),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StaticBody2D/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.7984357),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("InteractableArea:active")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.13333334, 0.1510294),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xt1h0"]
+_data = {
+&"RESET": SubResource("Animation_i7qj5"),
+&"locked": SubResource("Animation_psa10"),
+&"open": SubResource("Animation_2tyue")
+}
+
+[node name="Door" type="Node2D" unique_id=782631488]
+script = ExtResource("1_i7qj5")
+
+[node name="InteractableArea" parent="." unique_id=6959967 instance=ExtResource("1_y5pye")]
+position = Vector2(10, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractableArea" unique_id=40172293]
+position = Vector2(63, 0)
+shape = SubResource("RectangleShape2D_wkpy8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1756580301]
+position = Vector2(10, -4.6250086)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=520174483]
+position = Vector2(63, 5)
+shape = SubResource("RectangleShape2D_0yc80")
+
+[node name="DoorPivot" type="Marker2D" parent="." unique_id=847405856]
+
+[node name="DoorSprite" type="Sprite2D" parent="DoorPivot" unique_id=67882849]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(73, 2.9802322e-08)
+scale = Vector2(18.25, 1.3219956)
+texture = SubResource("PlaceholderTexture2D_wkpy8")
+
+[node name="OpenSound" type="AudioStreamPlayer2D" parent="." unique_id=1617281884]
+stream = SubResource("AudioStreamRandomizer_0yc80")
+
+[node name="LockSound" type="AudioStreamPlayer2D" parent="." unique_id=676562758]
+position = Vector2(0, -1)
+stream = ExtResource("4_xt1h0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1307332439]
+libraries/ = SubResource("AnimationLibrary_xt1h0")
+
+[connection signal="interacted" from="InteractableArea" to="." method="_on_interacted"]

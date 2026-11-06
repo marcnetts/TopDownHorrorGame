@@ -1,0 +1,171 @@
+[gd_scene format=4 uid="uid://b3tf24iuycvcs"]
+
+[ext_resource type="Texture2D" uid="uid://dtt2ut1s3eagy" path="res://asset/checker_512x512/checker_black_512x512.png" id="1_js5kq"]
+[ext_resource type="Texture2D" uid="uid://07eqyhjqt0mj" path="res://asset/checker_512x512/checker_blue_512x512.png" id="2_vtby7"]
+[ext_resource type="Texture2D" uid="uid://bc7scij8x0eqv" path="res://asset/checker_512x512/checker_cyan_512x512.png" id="3_842w1"]
+[ext_resource type="Texture2D" uid="uid://coaincvds2rce" path="res://asset/checker_512x512/checker_lime_512x512.png" id="4_xqcrn"]
+[ext_resource type="Texture2D" uid="uid://c0rl1t7la62s3" path="res://asset/checker_512x512/checker_orange_512x512.png" id="5_humct"]
+[ext_resource type="Texture2D" uid="uid://d3rwwgwh5c5ir" path="res://asset/checker_512x512/checker_pink_512x512.png" id="6_fk8x5"]
+[ext_resource type="Texture2D" uid="uid://bb7kv3oe14un4" path="res://asset/checker_512x512/checker_red_512x512.png" id="7_hgjt1"]
+[ext_resource type="Texture2D" uid="uid://crq6lv6t4msf2" path="res://asset/checker_512x512/checker_white_512x512.png" id="8_602mg"]
+[ext_resource type="Texture2D" uid="uid://c1j5dl23utmr2" path="res://asset/checker_512x512/checker_yellow_512x512.png" id="9_yhbkf"]
+[ext_resource type="PackedScene" uid="uid://dxbab1i4hm7qv" path="res://scene/player.tscn" id="10_sef8e"]
+[ext_resource type="PackedScene" uid="uid://ce1x4f2m8akuc" path="res://scene/physical_item.tscn" id="12_0m6vw"]
+[ext_resource type="PackedScene" uid="uid://f6grr6f1fpoe" path="res://scene/interactable_area.tscn" id="13_42wy6"]
+[ext_resource type="Resource" uid="uid://cebnp0oiidpl4" path="res://resource/item_battery.tres" id="13_js5kq"]
+[ext_resource type="Script" uid="uid://bhm0vakujbui2" path="res://script/spawner_component.gd" id="14_vtby7"]
+[ext_resource type="PackedScene" uid="uid://coie7d6ac2cfs" path="res://scene/door.tscn" id="15_842w1"]
+[ext_resource type="Resource" uid="uid://cj34rb467kkgj" path="res://resource/item_key_kitchen.tres" id="16_xqcrn"]
+[ext_resource type="TileSet" uid="uid://dxjhvlklcc2tn" path="res://resource/tileset_walls.tres" id="17_humct"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b3bx6"]
+texture = ExtResource("1_js5kq")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n86a4"]
+texture = ExtResource("2_vtby7")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r44gg"]
+texture = ExtResource("3_842w1")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ha2wn"]
+texture = ExtResource("4_xqcrn")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hcxjj"]
+texture = ExtResource("5_humct")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l51vy"]
+texture = ExtResource("6_fk8x5")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ys71v"]
+texture = ExtResource("7_hgjt1")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t151w"]
+texture = ExtResource("8_602mg")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i3lyw"]
+texture = ExtResource("9_yhbkf")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0yc80"]
+tile_size = Vector2i(512, 512)
+sources/0 = SubResource("TileSetAtlasSource_b3bx6")
+sources/1 = SubResource("TileSetAtlasSource_n86a4")
+sources/2 = SubResource("TileSetAtlasSource_r44gg")
+sources/3 = SubResource("TileSetAtlasSource_ha2wn")
+sources/4 = SubResource("TileSetAtlasSource_hcxjj")
+sources/5 = SubResource("TileSetAtlasSource_l51vy")
+sources/6 = SubResource("TileSetAtlasSource_ys71v")
+sources/7 = SubResource("TileSetAtlasSource_t151w")
+sources/8 = SubResource("TileSetAtlasSource_i3lyw")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_m7fl4"]
+polygon = PackedVector2Array(158, 68, 154, -124, 201, -134, 215, 115)
+
+[node name="Gym" type="Node2D" unique_id=1983661815]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=312485584]
+tile_map_data = PackedByteArray("AAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAACAP//AAAAAAAAAAACAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAD+/wIAAwAAAAAAAAD//wIAAwAAAAAAAAAAAAIAAwAAAAAAAAABAAIAAwAAAAAAAAACAAIAAwAAAAAAAAADAAIAAwAAAAAAAAADAAEAAwAAAAAAAAADAAAAAwAAAAAAAAADAP//AwAAAAAAAAADAP7/AwAAAAAAAAACAP7/AwAAAAAAAAABAP7/AwAAAAAAAAAAAP7/AwAAAAAAAAD///7/AwAAAAAAAAD+//7/AwAAAAAAAAD+////AwAAAAAAAAD+/wAAAwAAAAAAAAD+/wEAAwAAAAAAAAA=")
+tile_set = SubResource("TileSet_0yc80")
+
+[node name="PhysicalItem" parent="." unique_id=887918481 instance=ExtResource("12_0m6vw")]
+position = Vector2(16, 158)
+item = ExtResource("13_js5kq")
+
+[node name="PhysicalItem2" parent="." unique_id=41721446 instance=ExtResource("12_0m6vw")]
+position = Vector2(-32, 286)
+item = ExtResource("13_js5kq")
+
+[node name="PhysicalItem6" parent="." unique_id=402104169 instance=ExtResource("12_0m6vw")]
+position = Vector2(69, 262)
+item = ExtResource("13_js5kq")
+
+[node name="PhysicalItem7" parent="." unique_id=224948317 instance=ExtResource("12_0m6vw")]
+position = Vector2(214, 233)
+item = ExtResource("13_js5kq")
+
+[node name="PhysicalItem3" parent="." unique_id=301031110 instance=ExtResource("12_0m6vw")]
+position = Vector2(126, 199)
+item = ExtResource("13_js5kq")
+
+[node name="PhysicalItem4" parent="." unique_id=408719901 instance=ExtResource("12_0m6vw")]
+position = Vector2(-111, 188)
+item = ExtResource("13_js5kq")
+
+[node name="PhysicalItem5" parent="." unique_id=1659387844 instance=ExtResource("12_0m6vw")]
+position = Vector2(137, 94)
+item = ExtResource("13_js5kq")
+
+[node name="Player" parent="." unique_id=1390875365 instance=ExtResource("10_sef8e")]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player" unique_id=1124367911]
+remote_path = NodePath("../../Marker2D")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=301919254]
+
+[node name="Camera2D" type="Camera2D" parent="Marker2D" unique_id=1362527927]
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+editor_draw_drag_margin = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=319437384]
+occluder = SubResource("OccluderPolygon2D_m7fl4")
+
+[node name="InteractableArea" parent="." unique_id=1044666560 instance=ExtResource("13_42wy6")]
+position = Vector2(564, 252)
+
+[node name="SpawnerComponent" type="Node" parent="." unique_id=1327652086]
+script = ExtResource("14_vtby7")
+metadata/_custom_type_script = "uid://bhm0vakujbui2"
+
+[node name="Door" parent="." unique_id=782631488 instance=ExtResource("15_842w1")]
+position = Vector2(466, -200)
+key = ExtResource("16_xqcrn")
+
+[node name="PhysicalItem8" parent="." unique_id=833103503 instance=ExtResource("12_0m6vw")]
+position = Vector2(341, -126)
+item = ExtResource("16_xqcrn")
+
+[node name="TileMapWalls" type="TileMapLayer" parent="." unique_id=1942596589]
+tile_map_data = PackedByteArray("AAD9////AQAAAAEAAAD9/wAAAQAAAAEAAAD9/wEAAQAAAAEAAAD9/wIAAQABAAIAAAD9//7/AQAAAAEAAAD9//3/AQABAAAAAAD+//3/AQACAAMAAAD///3/AQACAAMAAAAAAP3/AQACAAMAAAABAP3/AQACAAMAAAACAP3/AQACAAMAAAADAP3/AQACAAMAAAAEAP3/AQACAAMAAAAFAP3/AQACAAMAAAAGAP3/AQACAAMAAAAHAP3/AQACAAMAAAAIAP3/AQADAAEAAAAIAP7/AQAAAAIAAAAIAAEAAQAAAAAAAAAIAAIAAQADAAEAAAAHAAIAAQACAAMAAAAGAAIAAQACAAMAAAAFAAIAAQACAAMAAAAEAAIAAQACAAMAAAADAAIAAQACAAMAAAACAAIAAQACAAMAAAABAAIAAQACAAMAAAAAAAIAAQACAAMAAAD//wIAAQACAAMAAAD+/wIAAQACAAMAAAAIAPz/AQAAAAEAAAAIAPv/AQAAAAEAAAAIAPr/AQAAAAEAAAAIAPn/AQAAAAEAAAAIAPj/AQAAAAEAAAAIAPf/AQABAAAAAAAJAPf/AQACAAMAAAAKAPf/AQACAAMAAAALAPf/AQACAAMAAAAMAPf/AQACAAMAAAANAPf/AQACAAMAAAAOAPf/AQACAAMAAAAPAPf/AQACAAMAAAAQAPf/AQACAAMAAAARAPf/AQACAAMAAAASAPf/AQADAAAAAAASAPj/AQABAAIAAAATAPj/AQADAAAAAAATAPn/AQAAAAEAAAATAPr/AQAAAAEAAAATAPv/AQABAAIAAAAUAPv/AQACAAMAAAAVAPv/AQADAAAAAAAVAPz/AQAAAAEAAAAVAP3/AQAAAAEAAAAVAP7/AQAAAAEAAAAVAP//AQAAAAEAAAAVAAAAAQADAAIAAAAUAAAAAQABAAAAAAAUAAEAAQAAAAEAAAAUAAIAAQAAAAEAAAAUAAMAAQAAAAEAAAAUAAQAAQAAAAEAAAAUAAUAAQADAAIAAAATAAUAAQABAAAAAAATAAYAAQADAAIAAAASAAYAAQACAAMAAAARAAYAAQACAAMAAAAQAAYAAQACAAMAAAAPAAYAAQACAAMAAAAOAAYAAQACAAMAAAANAAYAAQACAAMAAAAMAAYAAQACAAMAAAALAAYAAQACAAMAAAAKAAYAAQACAAMAAAAJAAYAAQABAAIAAAAJAAUAAQADAAAAAAAIAAUAAQABAAIAAAAIAAQAAQAAAAEAAAAIAAMAAQAAAAEAAAA=")
+tile_set = ExtResource("17_humct")
+
+[node name="Label" type="Label" parent="TileMapWalls" unique_id=1819046809]
+offset_left = 2074.0
+offset_top = -63.0
+offset_right = 2441.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 25
+text = "Cozinha
+Porta fechada no começo
+Tutorial de inventário"
+
+[node name="Label2" type="Label" parent="TileMapWalls" unique_id=743797842]
+offset_left = 2247.0
+offset_top = -371.0
+offset_right = 2744.0
+offset_bottom = -296.0
+theme_override_font_sizes/font_size = 25
+text = "Armário com itens para inventário"

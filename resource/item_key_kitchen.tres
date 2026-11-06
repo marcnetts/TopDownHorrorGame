@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cj34rb467kkgj"]
+
+[ext_resource type="Script" uid="uid://coki1ga7xabsy" path="res://script/item.gd" id="1_f8sm8"]
+
+[resource]
+script = ExtResource("1_f8sm8")
+name = &"key_kitchen"
+description = "Abre a porta da copa."
+metadata/_custom_type_script = "uid://coki1ga7xabsy"

@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://0kvg3kmy7pfn"]
+
+[ext_resource type="Script" uid="uid://b3txs1il8c22e" path="res://script/inventory_bar.gd" id="1_qv78v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lxkqy"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_0yc80"]
+font_size = 40
+
+[node name="InventoryBar" type="Control" unique_id=314994675]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_qv78v")
+
+[node name="InventoryPanel" type="PanelContainer" parent="." unique_id=2047272726]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -186.0
+offset_top = -68.0
+offset_right = 186.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ItemList" type="HBoxContainer" parent="InventoryPanel" unique_id=1122446698]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ItemBox1" type="PanelContainer" parent="InventoryPanel/ItemList" unique_id=1289388132]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxkqy")
+
+[node name="ItemIcon" type="TextureRect" parent="InventoryPanel/ItemList/ItemBox1" unique_id=1864473334]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Selected" type="Label" parent="InventoryPanel/ItemList/ItemBox1" unique_id=780795355]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -40)
+text = "V"
+label_settings = SubResource("LabelSettings_0yc80")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemBox2" type="PanelContainer" parent="InventoryPanel/ItemList" unique_id=736962061]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxkqy")
+
+[node name="ItemIcon" type="TextureRect" parent="InventoryPanel/ItemList/ItemBox2" unique_id=833087463]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Selected" type="Label" parent="InventoryPanel/ItemList/ItemBox2" unique_id=489558210]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -40)
+text = "V"
+label_settings = SubResource("LabelSettings_0yc80")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemBox3" type="PanelContainer" parent="InventoryPanel/ItemList" unique_id=152926184]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxkqy")
+
+[node name="ItemIcon" type="TextureRect" parent="InventoryPanel/ItemList/ItemBox3" unique_id=2073853631]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Selected" type="Label" parent="InventoryPanel/ItemList/ItemBox3" unique_id=1890750783]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -40)
+text = "V"
+label_settings = SubResource("LabelSettings_0yc80")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemBox4" type="PanelContainer" parent="InventoryPanel/ItemList" unique_id=1641902499]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxkqy")
+
+[node name="ItemIcon" type="TextureRect" parent="InventoryPanel/ItemList/ItemBox4" unique_id=787273005]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Selected" type="Label" parent="InventoryPanel/ItemList/ItemBox4" unique_id=1135139562]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -40)
+text = "V"
+label_settings = SubResource("LabelSettings_0yc80")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemBox5" type="PanelContainer" parent="InventoryPanel/ItemList" unique_id=411647171]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lxkqy")
+
+[node name="ItemIcon" type="TextureRect" parent="InventoryPanel/ItemList/ItemBox5" unique_id=1480349266]
+custom_minimum_size = Vector2(64, 64)
+custom_maximum_size = Vector2(64, 64)
+layout_mode = 2
+
+[node name="Selected" type="Label" parent="InventoryPanel/ItemList/ItemBox5" unique_id=643800399]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -40)
+text = "V"
+label_settings = SubResource("LabelSettings_0yc80")
+horizontal_alignment = 1
+vertical_alignment = 1
